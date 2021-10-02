@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace class2
+namespace классная
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // классная работа
             Console.WriteLine("1");
             Console.WriteLine("min значение типа sbyte " + sbyte.MinValue);
             Console.WriteLine("max значение типа sbyte " + sbyte.MaxValue);
@@ -38,21 +37,11 @@ namespace class2
             Console.WriteLine("2");
             string name = Console.ReadLine();
             string town = Console.ReadLine();
-            string age = Console.ReadLine();
-            string PIN = Console.ReadLine();
+            byte age = byte.Parse(Console.ReadLine());
+            int PIN = int.Parse(Console.ReadLine());
             Console.WriteLine("Имя " + name + "\n" + "Город " + town + "\n" + "Возраст " + age + "\n" + "ПИН-КОД " + PIN + "\n");
             //задание 3
             Console.WriteLine("3");
-            Console.WriteLine("Введите строчные буквы");
-            string letter = Console.ReadLine();
-            string letterUP = letter.ToUpper();
-            Console.WriteLine(letterUP);
-            Console.WriteLine("Введите прописные буквы ");
-            string letterlow = Console.ReadLine();
-            string letterLOW = letterlow.ToLower();
-            Console.WriteLine(letterLOW);
-            //задание 4
-            Console.WriteLine("4");
             string str = Console.ReadLine();
             string newstr = "";
             foreach (var ind in str)
@@ -67,6 +56,19 @@ namespace class2
                 }
             }
             Console.WriteLine(newstr + "\n");
+            //задание 4
+            Console.WriteLine("4");
+            Console.WriteLine("Ввести строку");
+            string text = Console.ReadLine();
+            Console.WriteLine("Ввести подстроку");
+            string podtext = Console.ReadLine();
+            bool found = text.Contains(podtext);
+            int amount = 0;
+            if (found)
+            {
+                amount += 1;
+            }
+            Console.WriteLine("кол-во подстроки в строке " + amount);
             //задание 5
             Console.WriteLine("5");
             double speed = double.Parse(Console.ReadLine());    // км/ч
@@ -91,6 +93,10 @@ namespace class2
 
                 }
                 Console.WriteLine("Отец будет старше в два раза сына через " + j);
+            }
+            if (age1 == 2 * age2)
+            {
+                Console.WriteLine("Отец старше сына в два раза");
             }
             else
             {
@@ -117,7 +123,7 @@ namespace class2
                 double sum7 = Math.Floor(holidayPrice / (normPrice * 0.01 * salePrice));
                 Console.WriteLine("Придется купить " + sum7 + " бутылок");
             }
-
         }
     }
-}
+ }    
+
