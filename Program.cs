@@ -4,145 +4,126 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hw
+namespace классная
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1.1");
-            int n = int.Parse(Console.ReadLine());
-            Console.WriteLine(n / 3600 + " полных часов прошло");
-            int minut = ((n % 3600) / 60);
-            Console.WriteLine(minut + " полных минут прошло");
-            int second = ((n % 3600) % 60);
-            Console.WriteLine(second + " полных секунд прошло"); //sd
-            //1.2
-            Console.WriteLine("1.2");
-            double a12 = 534 / 130;
-            Console.WriteLine(Math.Floor(a12));
-            //1.3
-            Console.WriteLine("Введите нынешний месяц");
-            string[] myarray = { "январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" };
-            string d = Console.ReadLine();
-            int num = 0;
-            for (int i = 0; i <= 12; i++)
+            Console.WriteLine("1");
+            Console.WriteLine("min значение типа sbyte " + sbyte.MinValue);
+            Console.WriteLine("max значение типа sbyte " + sbyte.MaxValue);
+            Console.WriteLine("min значение типа byte " + byte.MinValue);
+            Console.WriteLine("max значение типа byte " + byte.MaxValue);
+            Console.WriteLine("max значение типа short " + short.MaxValue);
+            Console.WriteLine("min значение типа short " + short.MinValue);
+            Console.WriteLine("min значение типа ushort " + ushort.MinValue);
+            Console.WriteLine("max значение типа ushort " + ushort.MaxValue);
+            Console.WriteLine("min значение типа int " + int.MinValue);
+            Console.WriteLine("max значение типа int " + int.MaxValue);
+            Console.WriteLine("min значение типа uint" + uint.MinValue);
+            Console.WriteLine("max значение типа uint " + uint.MaxValue);
+            Console.WriteLine("min значение типа long " + long.MinValue);
+            Console.WriteLine("max значение типа long " + long.MaxValue);
+            Console.WriteLine("max значение типа ulong " + ulong.MaxValue);
+            Console.WriteLine("min значение типа ulong " + ulong.MinValue);
+            Console.WriteLine("min значение типа float " + float.MinValue);
+            Console.WriteLine("max значение типа float " + float.MaxValue);
+            Console.WriteLine("max значение типа double " + double.MaxValue);
+            Console.WriteLine("min значение типа double " + double.MinValue);
+            Console.WriteLine("max значение типа decimal " + decimal.MaxValue);
+            Console.WriteLine("min значение типа decimal " + decimal.MinValue);
+            // задание 2
+            Console.WriteLine("2");
+            string name = Console.ReadLine();
+            string town = Console.ReadLine();
+            byte age = byte.Parse(Console.ReadLine());
+            int PIN = int.Parse(Console.ReadLine());
+            Console.WriteLine("Имя " + name + "\n" + "Город " + town + "\n" + "Возраст " + age + "\n" + "ПИН-КОД " + PIN + "\n");
+            //задание 3
+            Console.WriteLine("3");
+            string str = Console.ReadLine();
+            string newstr = "";
+            foreach (var ind in str)
             {
-                num++;
-                if (d == myarray[i])
+                if (char.IsUpper(ind))
                 {
-                    break;
-                }
-
-            }
-            Console.WriteLine("Значение x = " + (num + 1));
-            //1.4
-            Console.WriteLine("1.4");
-            int num14 = int.Parse(Console.ReadLine());
-            int a14 = num14 / 10;           // кол-во десятков 
-            int b14 = num14 % 10;              //единицы
-            Console.WriteLine("Кол-во десятков " + a14);
-            Console.WriteLine("Кол-во единиц " + b14);
-            Console.WriteLine("Сумма его цифр " + (a14 + b14));
-            Console.WriteLine("Кол-во десятков " + (a14 * b14));
-            //1.5
-            Console.WriteLine("1.5");
-            Console.WriteLine( "Введите трехзначное число");
-            int num15 = int.Parse(Console.ReadLine());
-            if (num15 > 99 && num15 < 1000)
-            {
-                int a15 = num15 / 100;
-                int b15 = num15 % 100 / 10;
-                int c15 = num15 % 10;
-                int numexit = b15 * 100 + c15 * 10 + a15;   // конечный номер
-                Console.WriteLine(numexit);
-            }
-            else 
-            {
-                Console.WriteLine("Вы ввели не трехзначное число");
-            }
-            //1.6
-            Console.WriteLine("1.6");
-            int a = int.Parse(Console.ReadLine()); // число 2 является последней цифрой
-            int b = int.Parse(Console.ReadLine()); 
-            int c = int.Parse(Console.ReadLine()); 
-            int x = b * 100 + c * 10 + a;
-            Console.WriteLine(x);
-            //1.7
-            Console.WriteLine("1.7");
-            int a1a2 = int.Parse(Console.ReadLine());
-            int b1b2 = int.Parse(Console.ReadLine());
-            int a1 = a1a2 / 10;
-            int a2 = a1a2 % 10;
-            int b1 = b1b2 / 10;
-            int b2 = b1b2 % 10;
-            int suma1b1 = a1 + b1;
-            int suma2b2 = a2 + b2;
-            Console.WriteLine("Число десятков " + suma1b1 + ", число единиц " + suma2b2);
-            //1.8
-            Console.WriteLine("1.8");
-            int k = int.Parse(Console.ReadLine());
-            if (k % 3 == 0)
-            {
-                Console.WriteLine(k / 3 % 10);
-
-            }
-            if (k % 3 == 1)
-            {
-                Console.WriteLine("1");
-
-            }
-            if (k % 3 == 2)
-            {
-                Console.WriteLine((k + 2) / 30);
-            }
-            //1.9
-            Console.WriteLine("1.9");
-            bool A = true;
-            bool B = false;
-            bool C = false;
-            Console.WriteLine(A || B);
-            Console.WriteLine(A && B);
-            Console.WriteLine(B || C);
-            //1.10
-            Console.WriteLine("1.10");
-            bool X = bool.Parse(Console.ReadLine());
-            bool Y = bool.Parse(Console.ReadLine());
-            bool Z = bool.Parse(Console.ReadLine());
-            Console.WriteLine("a) " + (!(X || Y) & (!X || !Z)));
-            Console.WriteLine("б) " + (!(!X && Y) | (X && !Z)));
-            Console.WriteLine("в " + (X || (!Y) & !(X || (!Z))));
-            //доп задания
-
-            Console.WriteLine("доп1");
-            Console.WriteLine("Введите кол-во цветов Тома");
-            int tomflower = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите кол-во цветов Сарры");
-            int sarraflower = int.Parse(Console.ReadLine());
-            bool b12 = (tomflower % 2 == 0);
-            bool c12 = (sarraflower % 2 != 0);
-
-            if (b12)
-            {
-                if (c12)
-                {
-                    Console.WriteLine("Они влюблены");
+                    newstr += char.ToLower(ind);
                 }
                 else
                 {
-                    Console.WriteLine("Они не влюблены");
+                    newstr += char.ToUpper(ind);
                 }
+            }
+            Console.WriteLine(newstr + "\n");
+            //задание 4
+            Console.WriteLine("4");
+            Console.WriteLine("Ввести строку");
+            string text = Console.ReadLine();
+            Console.WriteLine("Ввести подстроку");
+            string podtext = Console.ReadLine();
+            bool found = text.Contains(podtext);
+            int amount = 0;
+            if (found)
+            {
+                amount += 1;
+            }
+            Console.WriteLine("кол-во подстроки в строке " + amount);
+            //задание 5
+            Console.WriteLine("5");
+            double speed = double.Parse(Console.ReadLine());    // км/ч
+            double speed2 = Math.Floor(speed / 3.6 * 100);          // округление вних к бесконечности
+            Console.WriteLine("скорость в метрах в сек " + speed2);
+            //задание 6
+            Console.WriteLine("6");
+            Console.WriteLine("Введите возраст отца");
+            int age1 = int.Parse(Console.ReadLine());    //возраст отца
+            Console.WriteLine("Введите возраст сына");
+            int age2 = int.Parse(Console.ReadLine());             //возраст сына
+            int sum = Math.Abs(age1 - age2 * 2);
+            int j = 0;
+            int g = 0;
+            if (age1 > age2 * 2)
+            {
+                for (int i = 0; age2 * 2 < age1; i++)
+                {
+                    age1++;
+                    age2++;
+                    j++;
+
+                }
+                Console.WriteLine("Отец будет старше в два раза сына через " + j);
+            }
+            if (age1 == 2 * age2)
+            {
+                Console.WriteLine("Отец старше сына в два раза");
             }
             else
             {
-                Console.WriteLine("Они не влюблены");
+                for (int h = 0; age2 * 2 > age1; h++)
+                {
+                    age1--;
+                    age2--;
+                    g++;
+                }
+                Console.WriteLine("Отец был старше сына в два раза " + g + " лет назад");
             }
+            //задание 7
+            Console.WriteLine("7");
+            double normPrice = int.Parse(Console.ReadLine());
+            double salePrice = int.Parse(Console.ReadLine());
+            double holidayPrice = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("доп2");
-            Console.WriteLine("Введите кол-во часов");
-            double hours = double.Parse(Console.ReadLine());
-            Console.WriteLine("Кол-во литров,которые выпьет Натан " + Math.Floor(hours * 0.5));
-
+            if (salePrice == 0)
+            {
+                Console.WriteLine("Покупка виски не покроет расходы на отпуск");
+            }
+            else
+            {
+                double sum7 = Math.Floor(holidayPrice / (normPrice * 0.01 * salePrice));
+                Console.WriteLine("Придется купить " + sum7 + " бутылок");
+            }
         }
     }
-}
+ }    
+
